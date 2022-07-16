@@ -1,3 +1,11 @@
-.tabs
-  .tabs_item.active
-    All Boards
+.container
+  .tabs
+    .tabs_item.active
+      All Boards
+
+  - @boards.each do |board|
+    .card
+      .coard_title
+        = board.title
+      .coard_content
+        = board.content
