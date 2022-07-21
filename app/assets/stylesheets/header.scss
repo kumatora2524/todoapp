@@ -1,6 +1,6 @@
 @import 'variables';
 
-$avatar-size: 50px;
+$avatar-size: 40px;
 $back-icon-size: 16px;
 
 .header {
@@ -10,7 +10,6 @@ $back-icon-size: 16px;
   padding: 16px 16px;
   border-bottom: 1px solid black;
   border-bottom-color: rgba($color: #000000, $alpha: 0.1);
-  font-weight: bold;
 
   a {
     color: #000000;
@@ -50,7 +49,7 @@ $back-icon-size: 16px;
   &_pageTitle {
     color: white;
     line-height: $avatar-size;
-    font-size: 40px;
+    font-size: 20px;
   }
 
   &_avatar {
