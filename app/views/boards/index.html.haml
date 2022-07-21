@@ -10,8 +10,8 @@
             .dropdown
               = image_tag 'board-dorpdown.svg', class: 'dropbtn'
               .dropdown-content.mini
-                %p 編集する
-                %p 削除する
+                -# = link_to '編集する', edit_board_path(@board)
+                %a{:href => "#"} 削除する
       .card_content
         = board.content
   .new_card
