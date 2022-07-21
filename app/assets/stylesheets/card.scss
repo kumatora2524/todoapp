@@ -1,2 +1,85 @@
 @import './variables';
 
+$image-size: 32px;
+$avatar-size: 32px;
+$form-bg-color: #F4F4F4;
+
+.card {
+  background-color: $form-bg-color;
+  height: 160px;
+  width: 100%;
+  margin: 16px 0;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  
+  &_title {
+    font-size: 22px;
+    padding: 16px 16px 0px;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  
+  &_heart {
+    display: flex;
+    
+    img {
+      width: $image-size;
+      height: $image-size;
+    }
+    
+    span {
+      margin-left: 8px;
+      font-size: 12px;
+      font-weight: bold;
+      color: $text-base-color;
+      line-height: $image-size;
+    }
+  }
+  
+  &_detail {
+    padding-top: 12px;
+    cursor: pointer;
+    display: flex;
+    font-size: 10px;
+
+    img {
+      width: $avatar-size;
+      height: $avatar-size;
+      border-radius: 100%;
+      margin-right: 8px;
+    }
+  }
+
+  &_content {
+    padding: 0px 16px;
+  }
+
+  &_image {
+    height: 180px;
+    position: relative;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      width: 100%;
+    }
+  }
+}
+
+.new_card {
+  background-color: #FFFFFF;
+  height: 160px;
+  width: 100%;
+  margin: 16px 0;
+  text-align: center;
+  line-height: 160px;
+  border-radius: 10px;
+  border: dashed $form-bg-color;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}

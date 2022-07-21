@@ -1,11 +1,19 @@
 .container
-  .tabs
-    .tabs_item.active
-      All Boards
+  .tabs All Boards
 
   - @boards.each do |board|
     .card
-      .coard_title
+      .card_title
         = board.title
-      .coard_content
+        - if user_signed_in?
+          .board_detail_actions
+            .dropdown
+              = image_tag 'board-dorpdown.svg', class: 'dropbtn'
+              .dropdown-content.mini
+                %p 編集する
+                %p 削除する
+      .card_content
         = board.content
+  .new_card
+    .new_btn
+      = link_to '+ Add new board', new_board_path
