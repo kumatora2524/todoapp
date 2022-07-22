@@ -2,18 +2,20 @@
   .tabs All Boards
 
   - @boards.each do |board|
-    .card
-      .card_title
-        = board.title
-        - if user_signed_in?
-          .board_detail_actions
-            .dropdown
-              = image_tag 'board-dorpdown.svg', class: 'dropbtn'
-              .dropdown-content.mini
-                -# = link_to '編集する', edit_board_path(@board)
-                %a{:href => "#"} 削除する
-      .card_content
-        = board.content
+    = link_to board_path(board) do
+      .card
+        .card_title
+          = board.title
+          .board_detail
+            - if user_signed_in?
+              .board_detail_actions
+                .dropdown
+                  = image_tag 'board-dorpdown.svg', class: 'dropbtn'
+                  .dropdown-content.mini
+                    = link_to '編集する', edit_board_path(board)
+                    %a{:href => "#"} 削除する
+        .card_content
+          = board.content
   .new_card
     .new_btn
       = link_to '+ Add new board', new_board_path
