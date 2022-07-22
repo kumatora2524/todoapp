@@ -1,10 +1,18 @@
-.board
-  %h1.board_title= @board.title
-  .board_detail
-    = image_tag 'freeloginicon.png'
-    %div
-      %p hayato2524
-      %p 2022/07/20
-      
-  .borad_content
-    = @board.content
+.container
+  .tabs
+    %h1.board_title= @board.title
+  .board
+    .board_content
+      = @board.content
+    .board_detail
+      = image_tag 'freeloginicon.png'
+      %div
+        %p hayato2524
+        %p 2022/07/20
+      - if user_signed_in?
+        .board_detail_actions
+          .dropdown
+            = image_tag 'board-dorpdown.svg', class: 'dropbtn'
+            .dropdown-content.mini
+              = link_to '編集する', edit_board_path(@board)
+              = link_to '削除する', board_path(@board), data: { method: 'delete', confirm: '削除されますがよろしいですか？' }
