@@ -1,0 +1,12 @@
+= link_to board_path(board) do
+  .card
+    .card_title
+      = board.title
+    .card_content
+      = board.content
+    .card_detail
+      = image_tag 'freeloginicon.png'
+      %div 
+        %p hayato2524
+        %p
+          = board.display_created_at

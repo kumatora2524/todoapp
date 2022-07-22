@@ -14,7 +14,6 @@ $board-bg-color: #F4F4F4;
     height: 180px;
     position: relative;
     overflow: hidden;
-    // margin: 16px * -1 16px * -1 16px;
 
     img {
       width: $avatar-size;
@@ -49,7 +48,6 @@ $board-bg-color: #F4F4F4;
     }
 
     &_actions {
-      // justify-content: flex-end;
       right: 0px;
       position: absolute;
     }

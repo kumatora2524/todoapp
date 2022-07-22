@@ -6,9 +6,10 @@
       = @board.content
     .board_detail
       = image_tag 'freeloginicon.png'
-      %div
+      %div 
         %p hayato2524
-        %p 2022/07/20
+        %p
+          = @board.display_created_at
       - if user_signed_in?
         .board_detail_actions
           .dropdown
