@@ -2,12 +2,7 @@
   .tabs All Boards
 
   - @boards.each do |board|
-    = link_to board_path(board) do
-      .card
-        .card_title
-          = board.title
-        .card_content
-          = board.content
+    = render 'board', board: board
   .new_card
     .new_btn
       = link_to '+ Add new board', new_board_path
