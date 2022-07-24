@@ -7,10 +7,9 @@
     .board_detail
       = image_tag 'freeloginicon.png'
       %div 
-        %p hayato2524
-        %p
-          = @board.display_created_at
-      - if user_signed_in?
+        %p= @board.author_name
+        %p= @board.display_created_at
+      - if user_signed_in? && current_user.has_written?(@board)
         .board_detail_actions
           .dropdown
             = image_tag 'board-dorpdown.svg', class: 'dropbtn'
