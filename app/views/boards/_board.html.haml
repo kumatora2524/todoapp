@@ -7,6 +7,5 @@
     .card_detail
       = image_tag 'freeloginicon.png'
       %div 
-        %p hayato2524
-        %p
-          = board.display_created_at
+        %p= board.author_name
+        %p= board.display_created_at
