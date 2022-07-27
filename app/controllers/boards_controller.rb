@@ -1,6 +1,6 @@
 class BoardsController < ApplicationController
-before_action :set_board, only: [:show]
-before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :set_board, only: [:show]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @boards = Board.all
@@ -26,7 +26,7 @@ before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destro
   def edit
     @board = current_user.boards.find(params[:id])
   end
-  
+
   def update
     @board = current_user.boards.find(params[:id])
     if @board.update(board_params)

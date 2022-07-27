@@ -1,11 +1,18 @@
 = link_to board_path(board) do
-  .card
-    .card_title
+  .board
+    .board_title
       = board.title
-    .card_content
+    .board_content
       = board.content
-    .card_detail
+    .board_detail
       = image_tag board.user.avatar_image
-      %div 
+      %div
         %p= board.author_name
         %p= board.display_created_at
+      - if user_signed_in? && current_user.has_written?(board)
+        .board_detail_actions
+          .dropdown
+            = image_tag 'board-dorpdown.svg', class: 'dropbtn'
+            .dropdown-content.mini
+              = link_to '編集する', edit_board_path(board)
+              = link_to '削除する', board_path(board), data: { method: 'delete', confirm: '削除されますがよろしいですか？' }
