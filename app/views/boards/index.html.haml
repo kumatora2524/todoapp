@@ -2,7 +2,7 @@
   .tabs All Boards
 
   - @boards.each do |board|
-    = render 'board', board: board
+    = render 'commons/board', board: board
   .new_card
     .new_btn
       = link_to '+ Add new board', new_board_path

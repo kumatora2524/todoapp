@@ -23,16 +23,33 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :boards, dependent: :destroy
+  has_one :profile, dependent: :destroy
+
+  delegate :birthday, :age, :gender, to: :profile, allow_nil: true
 
   def has_written?(board)
     boards.exists?(id: board.id)
   end
 
   def display_name
-    self.email.split('@').first
+    # if profile && profile.nickname
+    #   profile.nickname
+    # else
+    #   self.email.split('@').first
+    # end
+    # 下記は、上記を簡略して記述(ぼっち演算子)
+    profile&.nickname || self.email.split('@').first
   end
 
-  def avatar_imag
-    'freeloginicon.png'
+  def avatar_image
+    if profile&.avatar&.attached?
+      profile.avatar
+    else
+      'freeloginicon.png'
+    end
+  end
+
+  def prepare_profile
+    profile || build_profile
   end
 end
