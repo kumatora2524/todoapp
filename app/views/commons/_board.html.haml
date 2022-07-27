@@ -5,7 +5,7 @@
     .card_content
       = board.content
     .card_detail
-      = image_tag 'freeloginicon.png'
+      = image_tag board.user.avatar_image
       %div 
         %p= board.author_name
         %p= board.display_created_at

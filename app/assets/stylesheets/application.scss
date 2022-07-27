@@ -6,6 +6,7 @@
 @import 'card';
 @import 'board';
 @import 'flash';
+@import 'profile';
 
 html {
   word-spacing: 1px;
@@ -40,7 +41,7 @@ h1 {
 
 a {
   text-decoration: none;
-  color: $text-base-color;
+  color: $base-text-color;
 }
 
 .container {
