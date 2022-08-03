@@ -17,6 +17,16 @@
 #  index_tasks_on_user_id   (user_id)
 #
 class Task < ApplicationRecord
+  has_one_attached :eyecatch
+
+  validates :title, presence: true
+  validates :title, length: {minimum:2, maximum:20}
+  validates :title, format: { with: /\A(?!\@)/ }
+
+  validates :content, presence: true
+  validates :content, length: {minimum:5}
+  validates :content, uniqueness: true
+  
   belongs_to :user
   belongs_to :board
 end
